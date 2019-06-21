@@ -1,12 +1,15 @@
 import React from 'react';
-import './App.css';
 import InventoryContainer from './InventoryContainer/InventoryContainer.js';
-import logo from './printsbyfrank-png-whitewblackbg.png';
+import logo from './printsbyfrank-inventory-manager.jpg';
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <img src={logo} alt="prints by frank inventory manager" className="logo" />
       <InventoryContainer />
+      <footer>
+        Copyright Frank Robenalt 2019
+      </footer>
     </div>
   );
 }

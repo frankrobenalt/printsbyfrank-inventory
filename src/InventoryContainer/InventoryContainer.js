@@ -32,15 +32,15 @@ export default class InventoryContainer extends React.Component {
     render(){
         return (
             <div>
-                <div className="header">
+                <div className="title">
                     Tees
                 </div>
                 <ProductWrapper data={this.state.products.tees} product={"tees"} />
-                <div className="header">
+                <div className="title">
                     Tanks
                 </div>
                 <ProductWrapper data={this.state.products.tanks} product={"tanks"} />
-                <div className="header">
+                <div className="title">
                     Hoodies
                 </div>
                 <ProductWrapper data={this.state.products.hoodies} product={"hoodies"} />

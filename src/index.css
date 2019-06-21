@@ -1,19 +1,31 @@
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
+  font-family: century-gothic, acumin-pro, sans-serif;
+  font-weight: 400;
+  font-style: normal;   
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   font-size: 16px;
 }
 
+footer {
+  border-top: 1px solid black;
+  padding: 5px;
+  width: 90%;
+  margin: 0 auto;
+}
+
 table {
   margin: 10px auto;
+  border-spacing: 0px;
+  border: 1px solid black;
 }
 
 td, th {
   padding: 5px;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   margin: 0;
   font-size: 1.2em;
   min-width: 20px;
@@ -22,15 +34,6 @@ td, th {
 .logo {
   width: 100%;
   margin: 0px auto;
-}
-
-.title {
-  font-size: 1.5em;
-  font-weight: 700;
-  width: 100%;
-  color: white;
-  background: black;
-  margin-top: -10px;
 }
 
 .header {
@@ -50,8 +53,36 @@ td, th {
   align-items: center;
 }
 
-.modal-container div:first-of-type {
+.modal {
   padding: 10px;
   background: white;
+  position: relative;
 }
 
+.exit-btn {
+  text-align: right;
+  background: white;
+  font-size: 1em;
+  width: 95%;
+  padding: 5px;
+}
+
+.submit-btn {
+  background: black;
+  color: white;
+  padding: 5px 10px 10px;
+  margin: 5px auto;
+}
+
+.modal input {
+  width: 25px;
+  margin: 5px auto;
+  padding: 5px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5em;
+  font-weight: 700;
+}

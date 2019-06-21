@@ -22,7 +22,9 @@ export default class ProductWrapper extends React.Component {
                 <thead>
                     <tr>
                         <th>Color</th>
-                        <th>XS</th>                        
+                        { this.props.product !== 'tanks' &&
+                        <th>XS</th>                      
+                        }  
                         <th>S</th>
                         <th>M</th>
                         <th>L</th>
