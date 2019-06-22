@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.cf55b37d.chunk.css",
+    "main.js": "/static/js/main.3d880a84.chunk.js",
+    "main.js.map": "/static/js/main.3d880a84.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.ec003530.chunk.js": "/static/js/2.ec003530.chunk.js",
+    "static/js/2.ec003530.chunk.js.map": "/static/js/2.ec003530.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.e5bfad49e824aa9d835b95289e95ad51.js": "/precache-manifest.e5bfad49e824aa9d835b95289e95ad51.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.cf55b37d.chunk.css.map": "/static/css/main.cf55b37d.chunk.css.map",
+    "static/media/printsbyfrank-inventory-manager.jpg": "/static/media/printsbyfrank-inventory-manager.9806de5e.jpg"
+  }
+}

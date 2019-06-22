@@ -5,6 +5,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const massive = require('massive');
+const path = require('path');
 require('dotenv').config()
 
 const app = express();
@@ -12,6 +13,8 @@ app.use( bodyParser.json() );
 app.use( cors() );
 
 const massiveConnection = massive(process.env.CONNECTION_STRING).then(db=>app.set('db', db)).catch(err => console.log(err) );
+
+app.use(express.static(path.join(__dirname, '/build')));
 
 // const server = http.createServer((req, res) => {
 //   res.statusCode = 200;
