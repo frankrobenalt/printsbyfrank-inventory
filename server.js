@@ -14,7 +14,7 @@ app.use( cors() );
 
 const massiveConnection = massive(process.env.CONNECTION_STRING).then(db=>app.set('db', db)).catch(err => console.log(err) );
 
-app.use(express.static(path.join(__dirname, '/build')));
+// app.use(express.static(path.join(__dirname, '/build')));
 
 // const server = http.createServer((req, res) => {
 //   res.statusCode = 200;
