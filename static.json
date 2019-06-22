@@ -2,7 +2,7 @@
     "root": "build/",
     "proxies": {
       "/route": {
-        "origin": "url"
+        "origin": "prints-by-frank-inventory.herokuapp.com"
       }
     }
   }
