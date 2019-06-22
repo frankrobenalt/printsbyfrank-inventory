@@ -2,7 +2,8 @@
   "name": "ecommerce-inventory",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://prints-by-frank-inventory-manager.herokuapp.com:3001",
+  "proxy": "http://localhost:3001",
+  "main": "server.js",
   "dependencies": {
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
