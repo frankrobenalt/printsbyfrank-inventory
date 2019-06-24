@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductWrapper from '../ProductWrapper/ProductWrapper';
 import axios from 'axios';
+import Modal from '../ProductRow/Modal.js';
 
 export default class InventoryContainer extends React.Component {
     constructor(){
@@ -10,12 +11,12 @@ export default class InventoryContainer extends React.Component {
             products: {
                 tees: [],
                 hoodies: [],
-                tanks: []
+                tanks: [],
             }
         }
 
         this.getProducts = this.getProducts.bind(this);
-    }
+       }
 
     componentDidMount(){
         this.getProducts();
@@ -28,6 +29,8 @@ export default class InventoryContainer extends React.Component {
             })
         })
     }
+
+    
 
     render(){
         return (

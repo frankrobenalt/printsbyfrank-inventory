@@ -14,23 +14,22 @@ app.use( cors() );
 
 const massiveConnection = massive(process.env.CONNECTION_STRING).then(db=>app.set('db', db)).catch(err => console.log(err) );
 
-app.use(express.static(path.join(__dirname, '/build')));
+// app.use(express.static(path.join(__dirname, '/build')));
 
-app.get('/*', function(req, res) {
-  console.log('here')
-  res.sendFile(path.join(__dirname, 'dist'), function(err) {
-    if (err) {
-      res.status(500).send(err)
-    }
-  })
-})
+// app.get('/*', function(req, res) {
+//   console.log('here')
+//   res.sendFile(path.join(__dirname, 'dist'), function(err) {
+//     if (err) {
+//       res.status(500).send(err)
+//     }
+//   })
+// })
 
 // const server = http.createServer((req, res) => {
 //   res.statusCode = 200;
 //   res.setHeader('Content-Type', 'text/plain');
 //   res.end('Hello World\n');
 // });
-//h
 
 app.get('/api/getProducts', (req, res)=>{
   const db = req.app.get('db');
@@ -54,6 +53,7 @@ app.post('/api/changeQuantity', (req, res)=>{
   newQObj[req.body.size] = req.body.newQ;
   let message = 'success'
   db[table].update({ Color: req.body.color }, newQObj, function(err, response){
+    console.log(response, err)
     if (err){
       message = 'error';
     }

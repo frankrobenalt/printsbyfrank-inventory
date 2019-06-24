@@ -41,6 +41,8 @@ td, th {
   padding-bottom: 5px;
 }
 
+
+
 .modal-container {
   position: fixed;
   top: 0;
@@ -57,6 +59,10 @@ td, th {
   padding: 10px;
   background: white;
   position: relative;
+}
+
+.display-none {
+  display: none;
 }
 
 .exit-btn {

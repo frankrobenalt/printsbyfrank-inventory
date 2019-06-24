@@ -20,6 +20,10 @@ export default class ProductRow extends React.Component {
     }
     
     showUpdateModal(size){
+        // let quantity;
+        // if (size === '2XL') { quantity = this.state["doublexl"] }
+        // else { quantity = this.state[size] }
+        // this.props.showUpdateModal(this.state.color, this.props.product, size, quantity);
         let modalContainer = document.createElement('div');
         modalContainer.classList.add('modal-container');
         modalContainer.id = 'modal';
