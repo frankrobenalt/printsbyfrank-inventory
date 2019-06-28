@@ -17,10 +17,38 @@ footer {
   margin: 0 auto;
 }
 
-table {
+.table {
   margin: 10px auto;
-  border-spacing: 0px;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
   border: 1px solid black;
+}
+
+.table-row {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.table-data {
+  border: 1px solid black;
+  padding: 5px;
+  width: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  font-weight: 600;
+}
+
+.head {
+  font-weight: 700;
+}
+
+.color {
+  width: 30%;
 }
 
 td, th {
@@ -56,7 +84,7 @@ td, th {
 }
 
 .modal {
-  padding: 10px;
+  padding: 10px 20px;
   background: white;
   position: relative;
 }
@@ -76,7 +104,7 @@ td, th {
 .submit-btn {
   background: black;
   color: white;
-  padding: 5px 10px 10px;
+  padding: 10px;
   margin: 5px auto;
 }
 
@@ -91,4 +119,16 @@ td, th {
 .title {
   font-size: 1.5em;
   font-weight: 700;
+}
+
+.green {
+  background-color: green;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.red {
+  background-color: red;
 }

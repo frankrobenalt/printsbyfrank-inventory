@@ -50,6 +50,7 @@ app.post('/api/changeQuantity', (req, res)=>{
   const db = req.app.get('db');
   let table = req.body.table.substring(0,1).toUpperCase() + req.body.table.substring(1, req.body.table.length);
   let newQObj = {};
+  if (req.body.size === 'doublexl') { req.body.size = '2XL' }
   newQObj[req.body.size] = req.body.newQ;
   let message = 'success'
   db[table].update({ Color: req.body.color }, newQObj, function(err, response){

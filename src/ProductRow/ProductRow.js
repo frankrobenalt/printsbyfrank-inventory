@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+import TableCell from './TableCell.js';
 
 export default class ProductRow extends React.Component {
     constructor(props){
         super(props)
 
         this.state = {
+            product: this.props.product,
             color: this.props.data["Color"],
             XS: this.props.data["XS"],
             S: this.props.data["S"],
@@ -81,22 +83,24 @@ export default class ProductRow extends React.Component {
             .catch(err => console.log(err));
     }
 
-    highlightChange(){
-
-    }
-
 render(){
+    const sizes = ["S", "M", "L", "XL", "doublexl"];
+    if(this.state.product !== 'tanks'){ sizes.unshift("XS") }
+    const cells = sizes.map(size => {
+        return (
+            <TableCell
+                quantity={ this.state[size] }
+                size={ size }
+                color={ this.state.color }
+                product={ this.state.product }
+                key={ sizes.indexOf(size) }
+            />
+        )
+    })
     return (
-        <tr>
-            <td>{this.state.color}</td>
-            { this.props.product !== 'tanks' &&
-                <td onClick={()=>this.showUpdateModal('XS')}>{this.state.XS}</td>
-            }
-            <td onClick={()=>this.showUpdateModal('S')}>{this.state.S}</td>
-            <td onClick={()=>this.showUpdateModal('M')}>{this.state.M}</td>
-            <td onClick={()=>this.showUpdateModal('L')}>{this.state.L}</td>
-            <td onClick={()=>this.showUpdateModal('XL')}>{this.state.XL}</td>
-            <td onClick={()=>this.showUpdateModal('2XL')}>{this.state.doublexl}</td>
-        </tr>
+        <div className="table-row">
+            <div className="table-data color">{this.state.color}</div>
+            { cells }
+        </div>
 )}
 }

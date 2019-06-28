@@ -18,24 +18,20 @@ export default class ProductWrapper extends React.Component {
             )
         })
         return (
-            <table>
-                <thead>
-                    <tr>
-                        <th>Color</th>
-                        { this.props.product !== 'tanks' &&
-                        <th>XS</th>                      
-                        }  
-                        <th>S</th>
-                        <th>M</th>
-                        <th>L</th>
-                        <th>XL</th>
-                        <th>2X</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div className="table">
+                <div className="table-row">
+                    <div className="table-data head color">Color</div>
+                    { this.props.product !== 'tanks' &&
+                        <div className="table-data head">XS</div>                      
+                    }  
+                    <div className="table-data head">S</div>
+                    <div className="table-data head">M</div>
+                    <div className="table-data head">L</div>
+                    <div className="table-data head">XL</div>
+                    <div className="table-data head">2X</div>
+                </div>
                   { rows }
-                </tbody>
-            </table>
+            </div>
         )
     }
 }
