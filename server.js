@@ -1,7 +1,5 @@
-const http = require('http');
-// const hostname = '127.0.0.1';
-const port = 3001;
 const express = require('express');
+const session = require('express-session');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const massive = require('massive');
@@ -14,6 +12,12 @@ app.use( cors() );
 
 const massiveConnection = massive(process.env.CONNECTION_STRING).then(db=>app.set('db', db)).catch(err => console.log(err) );
 
+app.use(session({
+  secret: process.env.SECRET,
+  resave: true,
+  saveUninitialized: true
+}));
+
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/', function(req, res) {
@@ -25,6 +29,23 @@ app.get('/', function(req, res) {
 //   res.setHeader('Content-Type', 'text/plain');
 //   res.end('Hello World\n');
 // });
+
+app.get('/api/checkSession', (req, res)=> {
+  if(req.session.frank){
+    res.send({ loggedIn: req.session.frank });
+  } else {
+    res.send({ loggedIn: false })
+  }
+})
+
+app.post('/api/login', (req, res)=> {
+   if(req.body.pw === process.env.PW){
+     req.session.frank = true;
+     res.send({loggedIn: true})
+   } else {
+     res.send({loggedIn: false})
+   }
+})
 
 app.get('/api/getProducts', (req, res)=>{
   const db = req.app.get('db');

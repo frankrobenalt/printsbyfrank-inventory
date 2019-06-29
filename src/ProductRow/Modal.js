@@ -15,18 +15,22 @@ export default class Modal extends React.Component {
     }
 
     updateQuantity(){
-        let reqBody = {
-            table: this.state.product,
-            color: this.state.color,
-            size: this.state.size,
-            newQ: this.state.quantity
+        if(this.props.isFrank){
+                let reqBody = {
+                    table: this.state.product,
+                    color: this.state.color,
+                size: this.state.size,
+                newQ: this.state.quantity
+                }
+                axios.post('/api/changeQuantity', reqBody)
+                .then(response => {
+                    if(response.data === 'success'){
+                        this.props.updateQuantity(this.state.quantity)
+                    }
+                })
+        } else {
+            this.props.updateQuantity(this.state.quantity)        
         }
-        axios.post('/api/changeQuantity', reqBody)
-        .then(response => {
-            if(response.data === 'success'){
-                this.props.updateQuantity(this.state.quantity)
-            }
-        })
     }
 
 

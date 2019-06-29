@@ -14,7 +14,7 @@ export default class ProductWrapper extends React.Component {
         const data = this.props.data.sort();
         const rows = data.map(cur => {
             return (
-                <ProductRow data={cur} key={cur.ID} product={this.props.product} />
+                <ProductRow data={cur} key={cur.ID} product={this.props.product} isFrank={this.props.isFrank} />
             )
         })
         return (

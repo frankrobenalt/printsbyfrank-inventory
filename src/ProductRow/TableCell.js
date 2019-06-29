@@ -28,9 +28,9 @@ export default class TableCell extends React.Component {
 
     render(){
         let quantityColorClass;
-        if(this.state.quantity > 5){ quantityColorClass = 'table-data green' }
-        else if(this.state.quantity <= 5 && this.state.quantity >= 3){ quantityColorClass = 'table-data yellow' }
-        if(this.state.quantity < 3){ quantityColorClass = 'table-data red' }
+        if(this.state.quantity > 3){ quantityColorClass = 'table-data green' }
+        else if(this.state.quantity <= 3 && this.state.quantity >= 2){ quantityColorClass = 'table-data yellow' }
+        if(this.state.quantity < 2){ quantityColorClass = 'table-data red' }
         return (
             <div  className={ quantityColorClass }>
                 <div onClick={ this.toggleUpdateModal }>
@@ -46,6 +46,7 @@ export default class TableCell extends React.Component {
                     }}
                     hideModal={ this.toggleUpdateModal }
                     updateQuantity={ this.updateQuantity }
+                    isFrank={ this.props.isFrank }
                 />
             </div>
         )

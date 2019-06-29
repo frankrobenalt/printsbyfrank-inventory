@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+ 
 body {
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
@@ -35,12 +39,19 @@ footer {
 .table-data {
   border: 1px solid black;
   padding: 5px;
-  width: 10%;
+  width: 11.66%;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 35px;
   font-weight: 600;
+}
+
+.table:nth-of-type(4) .table-data {
+  width: 14%;
+}
+
+.table:nth-of-type(4) .color {
+  width: 30%;
 }
 
 .head {
@@ -87,6 +98,11 @@ td, th {
   padding: 10px 20px;
   background: white;
   position: relative;
+  width: 250px;
+}
+
+.modal div, .modal input {
+  margin: 5px auto;
 }
 
 .display-none {
@@ -98,22 +114,29 @@ td, th {
   background: white;
   font-size: 1em;
   width: 95%;
-  padding: 5px;
 }
 
 .submit-btn {
   background: black;
   color: white;
   padding: 10px;
-  margin: 5px auto;
+  width: 100%;
 }
 
 .modal input {
-  width: 25px;
-  margin: 5px auto;
+  width: 50%;
   padding: 5px;
   font-size: 1.5em;
   text-align: center;
+}
+
+#pw {
+  width: 100%;
+  text-align: left;
+}
+
+.left {
+  text-align: left;
 }
 
 .title {
