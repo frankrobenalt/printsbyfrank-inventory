@@ -63,6 +63,6 @@ app.post('/api/changeQuantity', (req, res)=>{
   // })
 })
 
-app.listen(port, () => {
-  console.log(`Server running at ${port}`);
+app.listen(process.env.PORT || 3001, () => {
+  console.log(`Server running`);
 });
