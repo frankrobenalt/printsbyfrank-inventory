@@ -23,7 +23,7 @@ export default class App extends React.Component {
 
   render(){
     return (
-      <div>
+      <div className="main-container">
         <img src={logo} alt="prints by frank inventory manager" className="logo" />
         { this.state.loggedIn ? 
           <InventoryContainer 

@@ -11,7 +11,12 @@ export default class Modal extends React.Component {
             size: this.props.modalProduct.size,
             quantity: this.props.modalProduct.quantity
         }
-        this.updateQuantity = this.updateQuantity.bind(this)
+        this.updateQuantity = this.updateQuantity.bind(this);
+        this.updateInput = React.createRef();
+    }
+
+    componentDidUpdate(){
+        this.updateInput.current.focus();
     }
 
     updateQuantity(){
@@ -19,8 +24,8 @@ export default class Modal extends React.Component {
                 let reqBody = {
                     table: this.state.product,
                     color: this.state.color,
-                size: this.state.size,
-                newQ: this.state.quantity
+                    size: this.state.size,
+                    newQ: this.state.quantity
                 }
                 axios.post('/api/changeQuantity', reqBody)
                 .then(response => {
@@ -44,7 +49,7 @@ export default class Modal extends React.Component {
                 <div>{ this.state.product.substring(0, 1).toUpperCase() }{ this.state.product.substring(1, this.state.product.length-1) }</div>
                 <div>{ this.state.color }</div>
                 <div>{ this.state.size }</div>
-                <input type="number" name="quantity" value={ this.state.quantity } onChange={(e)=> this.setState({quantity: e.target.value})} id="quantity" />
+                <input ref={ this.updateInput } type="number" name="quantity" value={ this.state.quantity } onChange={(e)=> this.setState({quantity: e.target.value})} id="quantity" />
                 <div className="submit-btn" onClick={ ()=> this.updateQuantity() }>Change Quantity</div>
                 </div>
             </div>
